@@ -1,0 +1,175 @@
+
+
+:root {
+	--blue: #007bff;
+	--indigo: #6610f2;
+	--purple: #6f42c1;
+	--pink: #e83e8c;
+	--red: #dc3545;
+	--orange: #fd7e14;
+	--yellow: #ffc107;
+	--green: #28a745;
+	--teal: #20c997;
+	--cyan: #17a2b8;
+	--white: #fff;
+	--gray: #6c757d;
+	--gray-dark: #343a40;
+	--primary: #007bff;
+	--secondary: #6c757d;
+	--success: #28a745;
+	--info: #17a2b8;
+	--warning: #ffc107;
+	--danger: #dc3545;
+	--light: #f8f9fa;
+	--dark: #343a40;
+	--breakpoint-xs: 0;
+	--breakpoint-sm: 576px;
+	--breakpoint-md: 768px;
+	--breakpoint-lg: 992px;
+	--breakpoint-xl: 1200px;
+	--font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+	--font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+	
+	--font-size: 15px;
+
+	font-size: var(--font-size);
+	font-family: "Open Sans", sans-serif;
+
+	--dark1: rgb(30, 30, 30);
+	--grey1: rgb(77, 77, 77);
+	--grey2: rgb(176, 176, 176);
+	
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: white;
+}
+/* main {
+	width: 100vw;
+	height: 100vh;
+	display: block;
+	z-index: 0;
+}
+#canvas-container {
+	width: 100%;
+	height: 100%;
+	display: block;
+	z-index: 1;
+}
+canvas {
+	display: block;
+	background-color: var(--dark1);
+	width: 100%;
+	height: 100%;
+	border: 0.2px solid red;
+	z-index: 1;
+} */
+
+
+header[name="header"] {
+	width: 100vw;
+	height: 100%;
+	display: block;
+	position: absolute;
+	/* background-color: #4dc1ff; */
+	background: linear-gradient(180deg, #4dc1ff, #ffffff);
+}
+header[name="header"] > article {
+	position: relative;
+	width: max-content;
+	top: 5rem;
+	left: 5rem;
+	/* border: 1px solid red; */
+}
+header[name="header"] > article > aside {
+	width: max-content;
+	height: 9rem;
+	/* background-color: var(--grey1); */
+}
+
+.jumbo-text {
+	font-size: 5rem;
+	font-weight: bold;
+}
+.author {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #00bfff;
+}
+a.author {
+	cursor: pointer;
+	
+}
+
+
+.hovering-buttons {
+	z-index: 2;
+	position: fixed;
+	top: 2em;
+	left: 2em;
+}
+.hovering-buttons-background {
+	background-color: var(--grey2);
+	opacity: 0.25;
+	transition: opacity 0.25s ease-in-out;
+}
+.hovering-buttons-background:hover {
+	opacity: 1;
+}
+
+.cursor-crosshair {
+	cursor: crosshair;
+}
+.cursor-pointer {
+	cursor: pointer;
+}
+
+
+
+
+
+
+.card-grid {
+	display: grid;
+	gap: 1rem;
+
+	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+	grid-auto-rows: 240px;
+}
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #353535;
+	/* font-size: 3rem; */
+	color: #ffffff;
+	box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+	height: 100%;
+	width: 100%;
+	border-radius: 4px;
+	transition: all 500ms;
+	overflow: hidden;
+
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+/* .berry-card:hover {
+	box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+	transform: translateY(-3px) scale(1.1);
+} */
+@media screen and (min-width: 600px) {
+	.card-tall {
+		grid-row: span 2 / auto;
+	}
+	.card-wide {
+		grid-column: span 2 / auto;
+	}
+}
