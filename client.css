@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 :root {
 	--blue: #007bff;
@@ -50,7 +50,8 @@
 body {
 	background-color: white;
 }
-/* main {
+main {
+	position: absolute;
 	width: 100vw;
 	height: 100vh;
 	display: block;
@@ -64,21 +65,24 @@ body {
 }
 canvas {
 	display: block;
-	background-color: var(--dark1);
+	/* background-color: var(--dark1); */
+	background-color: #8bd6ff;
 	width: 100%;
 	height: 100%;
-	border: 0.2px solid red;
+	/* border: 0.2px solid red; */
 	z-index: 1;
-} */
+}
 
 
 header[name="header"] {
+	z-index: 5;
 	width: 100vw;
 	height: 100%;
 	display: block;
 	position: absolute;
-	/* background-color: #4dc1ff; */
-	background: linear-gradient(180deg, #4dc1ff, #ffffff);
+	/* background-color: #8bd6ff; */
+	/* opacity: 0.5; */
+	/* background: linear-gradient(180deg, #4dc1ff, #ffffff); */
 }
 header[name="header"] > article {
 	position: relative;
@@ -93,6 +97,19 @@ header[name="header"] > article > aside {
 	/* background-color: var(--grey1); */
 }
 
+#header-author::before {
+	content: "@ ";
+	text-decoration: underline;
+}
+#header-author {
+	font-size: 5rem;
+	font-weight: bold;
+	text-decoration: underline;
+	color: var(--dark);
+}
+#header-author:hover {
+	color: var(--secondary);
+}
 .jumbo-text {
 	font-size: 5rem;
 	font-weight: bold;
@@ -100,7 +117,7 @@ header[name="header"] > article > aside {
 .author {
 	font-size: 1.5rem;
 	font-weight: bold;
-	color: #00bfff;
+	color: #ffffff;
 }
 a.author {
 	cursor: pointer;
