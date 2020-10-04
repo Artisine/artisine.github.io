@@ -23,6 +23,7 @@ export var mouse = {x: undefined, y: undefined};
 export var deltaTimeMultiplier = 1;
 
 const mainCanvas = new Canvas(Utility.getElement("#canvas"));
+// mainCanvas.active = false;
 window.addEventListener("resize", mainCanvas.resize.bind(mainCanvas));
 export {mainCanvas};
 
@@ -57,25 +58,80 @@ let randoClasses = {
 	"Camera": Camera,
 };
 
-
-for (let i=0; i<50; i+=1) {
+const numberOfBoidsToSpawn = Math.min(
+	Math.max(
+		20,
+		Math.floor(Math.random() * 2 * Number(mainCanvas.canvasElement.width / mainCanvas.canvasElement.height))
+	),
+	100
+);
+// const numberOfBoidsToSpawn = 200;
+for (let i=0; i<numberOfBoidsToSpawn; i+=1) {
 	const boid = new Boid();
 	boid.setPosition(
-		mainCanvas.canvasElement.width * Math.random(),
-		mainCanvas.canvasElement.height * Math.random()
+		new Vector2(
+			mainCamera.getPosition.getX + mainCanvas.canvasElement.halfWidth  * (Math.random() * 2 - 1),
+			mainCamera.getPosition.getY + mainCanvas.canvasElement.halfHeight * (Math.random() * 2 - 1)
+		)
+		
 	);
 }
 
 
 
-sortInstancesBasedOnRenderPriority();
-setTimeout(()=>{
-	sortInstancesBasedOnRenderPriority();
-}, 60000);
+// sortInstancesBasedOnRenderPriority();
+// setTimeout(()=>{
+// 	sortInstancesBasedOnRenderPriority();
+// }, 60000);
 
 
+const cardsToLinks = {
+	"boids": "https://pleasant-boids.herokuapp.com"
+};
+class PortfolioCard extends HTMLDivElement {
+	constructor(card_name) {
+		super();
+
+		this.card_name = card_name;
+		this.classList = "card dark";
+
+		this.style.backgroundImage = `url("./images/${card_name}.png")`;
+
+		const h2 = document.createElement("h2");
+		const formattedName = [String(card_name[0]).toUpperCase(), card_name.slice(1)].join("");
+		console.log(formattedName);
+		h2.innerHTML = formattedName;
+		this.appendChild(h2);
+
+		// const a = document.createElement("a");
 
 
+		if (cardsToLinks[card_name] !== undefined) {
+			this.style.cursor = "pointer";
+			this.addEventListener("click", ()=>{
+				window.location.assign(cardsToLinks[this.card_name]);
+			});
+		}
+	}
+	setImage(card_name) {
+		this.card_name = card_name;
+		this.style.backgroundImage = `url("./images/${card_name}.png")`;
+
+	}
+}
+customElements.define("portfolio-card", PortfolioCard, { extends: "div" });
+
+
+const portfolioCards = new Map();
+const section_cardGrid = getElement(`section[name="card-grid"]`);
+const imageNames = ["boids", "physics-engine", "circles"];
+for (let name of imageNames) {
+	const portfolioCard = new PortfolioCard(name);
+	portfolioCards.set(name, portfolioCard);
+	section_cardGrid.appendChild(portfolioCards.get(name));
+}
+[...portfolioCards.values()][1].classList.replace("dark", "light");
+[...portfolioCards.values()][2].classList.replace("dark", "light");
 
 
 
