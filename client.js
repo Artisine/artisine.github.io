@@ -11,7 +11,7 @@ const portfolioElements = {
 };
 
 // portfolioElements.header.style.marginTop = `calc(50vh - ${portfolioElements.verticalList.clientHeight}px)`;
-
+portfolioElements.header.style.top = `${portfolioElements.header.clientHeight/2}px`;
 
 
 
