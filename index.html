@@ -2,50 +2,205 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Artisine</title>
+	<title>Artisine's Porfolio</title>
 </head>
 <body>
-	<main>
-		<canvas id="canvas">uhoh</canvas>
-	</main>
-	<div name="above-canvas">
-		<header name="header">
-			<article name="title">
-				<aside>
-					<!-- <h1 class="jumbo-text">Portfolio</h1> -->
-					<h1 id="header-h1-author">
-						<a id="header-author" href="https://github.com/Artisine/"><span style="display:inline-block">@</span>Artisine</a>
-					</h1>
-				</aside>
-			</article>
-		</header>
-		<section name="card-grid" class="card-grid">
-			<!-- <article class="card light">
-				<h2>Photo Grid</h2>
-				<a href="https://pleasant-boids.herokuapp.com">a</a>
-			</article> -->
-			<!--
-			<article class="card light">
-				<h2>Boids</h2>
-			</article>
-			<article class="light card">
-				<h2>Physics Engine</h2>
-			</article>
-			<article class="card light">
-				<h2>An Among Us Clone</h2>
-			</article>
-			<article class="light card">
-				<h2>Several ROBLOX Experiments</h2>
-			</article>
-			<article class="card light">
-				<h2>Bouncy Circles</h2>
-			</article> -->
-		</section>
-	</div>
 	
 
-	<link href="./client.css" rel="stylesheet" type="text/css">
-	<script src="./client.js" type="module"></script>
+
+
+	<main>
+
+		<header>
+
+			<section id="left">
+
+				<header id="header" class="portfolio center-xy-div">
+					<div id="vertical-list" class="portfolio">
+						<h1 id="title" class="portfolio">Hello World!</h1>
+						<h2 id="subtitle" class="portfolio">
+							<a id="link" class="portfolio" href="https://github.com/Artisine/" target="_blank">
+								@<span id="link-text" class="portfolio">Artisine</span>
+							</a>
+							says hello!
+							
+							
+						</h2>
+						<h3 id="description" class="portfolio">
+							Beep Boop
+						</h3>
+					</div>
+					
+				</header>
+
+
+
+			</section>
+			<section id="right">
+				b
+			</section>
+
+		</header>
+		
+
+
+	</main>
+
+	<link href="./bootstrap.min.css" rel="stylesheet" type="text/css">
+	<style>
+		:root {
+			font-size: 16px;
+			--bs-font-sans-serif: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+			--color-text-muted: dimgray;
+		}
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+		html, body {
+			background: white;
+			display: block;
+			position: absolute;
+
+			margin: 0;
+			font-family: var(--bs-font-sans-serif);
+			font-size: 1rem;
+			font-weight: 400;
+			line-height: 1.5;
+			color: #212529;
+		}
+		main {
+			width: 100vw;
+			height: 100vh;
+			background: #f5deb3;
+			display: block;
+			position: absolute;
+		}
+		main > header {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			
+			justify-content: center;
+			align-items: center;
+		}
+		main > header section {
+			height: 100%;
+			display: block;
+			position: relative;
+		}
+
+		section#left {
+			background-color:snow;
+			width: 100%;
+			display: block;
+		}
+		section#right {
+			background-color: black;
+			width: 0%;
+			display: none;
+		}
+		@media screen and (min-width: 400px) {
+			section#left {
+				background-color: snow;
+				width: 100%;
+				display: block;
+			}
+			section#right {
+				background-color: black;
+				width: 0;
+				display: none;
+			}
+		}
+		@media screen and (min-width: 800px) {
+			section#left {
+				background-color: snow;
+				width: 50%;
+				display: block;
+			}
+			section#right {
+				background-color: black;
+				width: 50%;
+				display: block;
+			}
+		}
+		@media screen and (min-width: 1100px) {
+			section#left {
+				background-color: snow;
+				width: 40%;
+				display: block;
+			}
+			section#right {
+				background-color: black;
+				width: 60%;
+				display: block;
+			}
+		}
+
+		.center-x-div {
+			display: flex;
+			justify-content: center;
+		}
+		.center-y-div {
+			display: flex;
+			align-items: center;
+		}
+		.center-xy-div {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+
+		.portfolio {}
+		.portfolio#title {
+			color: dodgerblue;
+			font-size: 3rem;
+		}
+		.portfolio#subtitle {
+			color: var(--color-text-muted);
+			font-size: 2rem;
+		}
+		.portfolio#description {
+			color: var(--color-text-muted);
+			font-size: 1rem;
+		}
+		.portfolio#link {
+			color: var(--color-text-muted);
+			text-decoration: none;
+		}
+		.portfolio#link:hover {
+			color: dodgerblue;
+		}
+		.portfolio#link:active {
+			color: red;
+		}
+		.portfolio#link-text {
+			/* color: var(--color-text-muted); */
+			color: inherit;
+			text-decoration: underline;
+		}
+		/* .portfolio#link-text:hover {
+			color: dodgerblue;
+		}
+		.portfolio#link-text:active {
+			color: red;
+		} */
+		.portfolio#header {
+			width: 100%;
+			height: 100%;
+		}
+		.portfolio#vertical-list {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+	</style>
 </body>
 </html>
