@@ -1,7 +1,7 @@
 import * as Utility from "./utility.js";
 import {Vector2} from "./vector2.js";
 import {instances, Instance} from "./instance.js";
-import {mainCanvas, mainCamera, deltaTimeMultiplier} from "../client.js";
+import {mainCanvas, mainCamera, deltaTimeMultiplier} from "../client/client_old.js";
 export default class Entity extends Instance {
 	constructor() {
 		super();

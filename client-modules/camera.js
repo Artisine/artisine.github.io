@@ -1,7 +1,7 @@
 import {Vector2, zeroedVector2} from "./vector2.js";
 import Entity from "./entity.js";
 import Actor from "./actor.js";
-import {mainCanvas, mainCamera} from "../client.js";
+import {mainCanvas, mainCamera} from "../client/client_old.js";
 import {Math_rad, Math_deg} from "./utility.js";
 
 export default class Camera extends Actor {

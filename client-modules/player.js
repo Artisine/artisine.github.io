@@ -2,7 +2,7 @@
 import * as Utility from "./utility.js";
 import Actor from "./actor.js";
 import {Vector2} from "./vector2.js";
-import {mainCanvas, mainPlayer} from "./../client.js";
+import {mainCanvas, mainPlayer} from "../client/client_old.js";
 import {controlsApplyTo} from "./userInputService.js";
 export default class extends Actor {
 	constructor() {

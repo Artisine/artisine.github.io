@@ -1,5 +1,5 @@
 
-import {mainCanvas, mainCamera} from "../client.js";
+import {mainCanvas, mainCamera} from "../client/client_old.js";
 import Entity from "./entity.js";
 
 export default class Effect extends Entity {

@@ -1,5 +1,5 @@
 
-import {mainPlayer, mouse} from "./../client.js";
+import {mainPlayer, mouse} from "../client/client_old.js";
 
 
 export var controlsApplyTo = new Map();

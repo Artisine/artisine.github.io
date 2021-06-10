@@ -1,5 +1,5 @@
 import * as Utility from "./utility.js";
-import {renderPriority} from "../client.js";
+import {renderPriority} from "../client/client_old.js";
 
 function insertionSort(inputArr) {
 	let n = inputArr.length;

@@ -1,5 +1,5 @@
 import {Math_rad, Math_deg, distanceBetweenPoints} from "./utility.js";
-import {mainCanvas, mainCamera, deltaTimeMultiplier} from "../client.js";
+import {mainCanvas, mainCamera, deltaTimeMultiplier} from "../client/client_old.js";
 import {instances, Instance, boids} from "./instance.js";
 import Entity from "./entity.js";
 import Actor from "./actor.js";
